@@ -30,3 +30,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+.form-control {
+
+
+  background-color: rgb(233, 243, 245);
+
+
+}
+
+.form-control:focus {
+
+
+  background-color: rgb(233, 243, 245);
+
+
+}
