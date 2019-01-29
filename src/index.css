@@ -24,7 +24,7 @@ code {
 .productForm {
 
   background-color:  #ffffff;
-  width : 60%;
+  width : 80%;
   padding: 10px;
   border-radius: 5px;
 
@@ -35,15 +35,7 @@ code {
 
 
   margin-top: 20px;
+  padding: 20px;
   
 }
 
-
-
-.form-control {
-
-
-  background-color: rgb(233, 243, 245);
-
-
-}
