@@ -24,7 +24,7 @@ code {
 .productForm {
 
   background-color:  #ffffff;
-  width : 80%;
+  width : 60%;
   border-radius: 5px;
   
 }
@@ -38,3 +38,26 @@ code {
   
 }
 
+
+.bottom-save {
+
+
+  height: 42px;
+  line-height: 42px;
+  background-color: #333333;
+  color : #6b6b6b;
+  text-align: center
+  
+
+}
+
+
+.bottom-cancel {
+
+  height: 42px;
+  line-height: 42px;
+  background-color: #2358fb;
+  color : #ffffff
+
+
+}

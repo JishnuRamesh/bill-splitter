@@ -55,13 +55,7 @@ class ProductForm extends Component {
                         <div className="form-group col-md-1 text-center">
                   
                             
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
-                            <br></br>
+                            
                             <span> SHARE </span>
                             
 
@@ -116,14 +110,14 @@ class ProductForm extends Component {
                 <div className="form-row">
 
 
-                    <div className="text-center form-control col-6 " style={{backgroundColor : "blue" }}>
+                    <div className=" bottom-save  col-6 " >
                     
                         SAVE
                     
                     </div>
 
 
-                    <div className="text-center form-control col-6 " style={{backgroundColor : "Black" }}>
+                    <div className="text-center  bottom-cancel col-6 " >
                     
                         CANCEL
                     
