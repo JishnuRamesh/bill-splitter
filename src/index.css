@@ -42,8 +42,8 @@ code {
 .bottom-save {
 
 
-  height: 42px;
-  line-height: 42px;
+  height: 50px;
+  line-height: 50px;
   background-color: #333333;
   color : #6b6b6b;
   text-align: center
@@ -54,8 +54,8 @@ code {
 
 .bottom-cancel {
 
-  height: 42px;
-  line-height: 42px;
+  height: 50px;
+  line-height: 50px;
   background-color: #2358fb;
   color : #ffffff
 
