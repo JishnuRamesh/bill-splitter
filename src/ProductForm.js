@@ -4,14 +4,133 @@ import vj from './images/vj.jpg';
 import srk from './images/srk.jpg';
 import jo from './images/jo.jpg';
 import sasi from './images/sasi.jpg';
+import emptyImage from './images/empty.jpg';
 
 
 
 class ProductForm extends Component {
 
 
+    constructor() {
+
+        super();
+        this.state = {
+    
+            valueAdded : false
+        }
+    
+        this.showContent = this.showContent.bind(this);
+    
+    
+      }
+    
+
+
+
+      showContent(){
+
+        
+        this.setState({valueAdded:true});
+        console.log("yesy");
+
+
+      }
+
+
+
+
     render() {
 
+        let pictures;
+
+        if (this.state.valueAdded === true) {
+
+           pictures =          <div>
+
+<h5 className="text-center p-2"> Select whom you want to split the bills with </h5>
+
+
+<div className="form-row p-3 ">
+
+
+<div className="form-group col-md-1 text-center">
+
+    
+<img className="img-fluid rounded-circle p-3" src={emptyImage} alt="" style={{borderColor : "white"}} />
+    <span> SHARE </span>
+    
+
+</div>
+
+
+ <div className="form-group col-md-2 text-center p-3">
+
+     <img className="img-fluid rounded-circle secondary-image" src={jish} alt="jish" />
+    <input type="number" className="form-control mt-2" id="jish-amount" placeholder="0"  required/>
+
+</div>
+
+<div className="form-group col-md-2 text-center p-3">
+
+     <img className="img-fluid rounded-circle secondary-image" src={vj} alt="vijay"/>
+     <input type="number" className="form-control mt-2" id="vj-amount" placeholder="0"  required/>
+
+</div>
+
+<div className="form-group col-md-2 text-center p-3">
+
+     <img className="img-fluid rounded-circle secondary-image" src={srk}  alt="srk"/>
+     <input type="number" className="form-control mt-2" id="srk-amount" placeholder="0"  required/>
+
+</div>
+
+<div className="form-group col-md-2 text-center p-3">
+
+    
+    <img className="img-fluid rounded-circle  secondary-image " src={jo}  alt="johnnie"/>
+    <input type="number" className="form-control mt-2" id="jo-amount" placeholder="0"  required/>
+
+ </div>
+
+ <div className="form-group col-md-2 text-center p-3">
+
+    
+     <img className="img-fluid rounded-circle  secondary-image " src={sasi}  alt="sasi"/>
+    
+    <input type="number" className="form-control mt-2" id="sasi-amount" placeholder="0"  required/>
+
+</div>
+
+
+
+
+
+</div>
+
+
+<div className="form-row">
+
+
+<div className=" bottom-save  col-6 " >
+
+SAVE
+
+</div>
+
+
+<div className="text-center  bottom-cancel col-6 " >
+
+CANCEL
+
+</div>
+
+
+</div>
+
+</div>
+
+
+        }
 
 
         return(
@@ -41,91 +160,18 @@ class ProductForm extends Component {
 
                      <div className="form-group col-md-4">
                        <label htmlFor="amount">Amount</label>
-                        <input type="number" className="form-control" id="amounbt" placeholder="$0.0"  required/>
+                        <input type="number" className="form-control" id="amounbt" placeholder="$0.0"
+                          required onChange={this.showContent} />
                       </div>
                 </div>
 
 
-                 <h5 className="text-center p-2"> Select whom you want to split the bills with </h5>
-
-
-                <div className="form-row p-3 ">
-
-
-                        <div className="form-group col-md-1 text-center">
-                  
-                            
-                            
-                            <span> SHARE </span>
-                            
-
-                        </div>
-
-
-                         <div className="form-group col-md-2 text-center">
-                  
-                             <img className="img-fluid rounded-circle p-3" src={jish} alt="jish" />
-                            <input type="number" className="form-control" id="jish-amount" placeholder="0"  required/>
-               
-                        </div>
-
-                        <div className="form-group col-md-2 text-center">
-                  
-                             <img className="img-fluid rounded-circle p-3" src={vj} alt="vijay"/>
-                             <input type="number" className="form-control" id="vj-amount" placeholder="0"  required/>
-               
-                        </div>
-
-                        <div className="form-group col-md-2 text-center">
-                  
-                             <img className="img-fluid rounded-circle p-3" src={srk}  alt="srk"/>
-                             <input type="number" className="form-control" id="srk-amount" placeholder="0"  required/>
-    
-                        </div>
-
-                        <div className="form-group col-md-2 text-center">
-
-                            
-                            <img className="img-fluid rounded-circle p-3" src={jo}  alt="johnnie"/>
-                            <input type="number" className="form-control" id="jo-amount" placeholder="0"  required/>
-                        
-                         </div>
-
-                         <div className="form-group col-md-2 text-center">
-
-                            
-                             <img className="img-fluid rounded-circle p-3" src={sasi}  alt="sasi"/>
-                            
-                            <input type="number" className="form-control" id="sasi-amount" placeholder="0"  required/>
-
-                        </div>
                 
-
-              
-
-
-                </div>
-             
-             
-                <div className="form-row">
+                
+                {pictures}
 
 
-                    <div className=" bottom-save  col-6 " >
-                    
-                        SAVE
-                    
-                    </div>
-
-
-                    <div className="text-center  bottom-cancel col-6 " >
-                    
-                        CANCEL
-                    
-                    </div>
-
-                    
-                </div>
-
+               
 
                
              
