@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import ImageComponent from './ImageComponent';
+
+
 import jish from './images/jish.jpg';
 import vj from './images/vj.jpg';
 import srk from './images/srk.jpg';
@@ -90,13 +93,9 @@ class ProductForm extends Component {
 
                                             </div>
 
+                                            <ImageComponent image={jish} />
 
-                                            <div className="form-group col-md-2 text-center p-3">
-
-                                                    <img className="img-fluid rounded-circle secondary-image" src={jish} alt="jish" />
-                                                    <input type="number" className="form-control mt-2" id="jish-amount" placeholder="0"  required/>
-
-                                            </div>
+                                           
 
                                             <div className="form-group col-md-2 text-center p-3">
 
@@ -189,7 +188,7 @@ class ProductForm extends Component {
                      <div className="form-group col-md-4">
                        <label htmlFor="amount">Amount</label>
                         <input type="number" className="form-control" id="amounnt" placeholder="$0.0"
-                          required onChange={this.showContent}  value={this.state.amount}/>
+                          required onChange={this.showContent} />
                       </div>
                 </div>
 
