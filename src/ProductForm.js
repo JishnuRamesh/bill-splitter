@@ -17,7 +17,8 @@ class ProductForm extends Component {
         this.state = {
     
             isValueAdded : false,
-            amount : 0
+            amount : 0,
+            
 
         }
     
