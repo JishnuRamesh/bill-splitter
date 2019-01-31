@@ -97,3 +97,16 @@ border-color : red;
   transition : opacity 1000ms ease-out;
   
   }
+
+  @media screen and (max-width : 600px) {
+
+
+    .secondary-image{
+
+        height: 50px;
+        width: 50px;
+
+
+    }
+
+  }
