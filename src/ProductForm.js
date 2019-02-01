@@ -48,6 +48,8 @@ class ProductForm extends Component {
             
         }
 
+       
+
         
       }
 
@@ -93,43 +95,15 @@ class ProductForm extends Component {
 
                                             </div>
 
-                                            <ImageComponent image={jish} />
+                                            <ImageComponent image={jish} altText="jish" id="jish-amount" />
 
-                                           
+                                            <ImageComponent image={vj} altText="vj" id="vj-amount" />
+                                            
+                                            <ImageComponent image={srk} altText="srk" id="srk-amount" />
 
-                                            <div className="form-group col-md-2 text-center p-3">
+                                            <ImageComponent image={jo} altText="jo" id="jo-amount" />
 
-                                                    <img className="img-fluid rounded-circle secondary-image" src={vj} alt="vijay"/>
-                                                    <input type="number" className="form-control mt-2" id="vj-amount" placeholder="0"  required/>
-
-                                            </div>
-
-                                            <div className="form-group col-md-2 text-center p-3">
-
-                                                    <img className="img-fluid rounded-circle secondary-image" src={srk}  alt="srk"/>
-                                                    <input type="number" className="form-control mt-2" id="srk-amount" placeholder="0"  required/>
-
-                                            </div>
-
-                                            <div className="form-group col-md-2 text-center p-3">
-
-    
-                                                    <img className="img-fluid rounded-circle  secondary-image " src={jo}  alt="johnnie"/>
-                                                    <input type="number" className="form-control mt-2" id="jo-amount" placeholder="0"  required/>
-
-                                            </div>
-
-                                            <div className="form-group col-md-2 text-center p-3">
-
-    
-                                                    <img className="img-fluid rounded-circle  secondary-image " src={sasi}  alt="sasi"/>
-    
-                                                    <input type="number" className="form-control mt-2" id="sasi-amount" placeholder="0"  required/>
-
-                                            </div>
-
-
-
+                                            <ImageComponent image={sasi} altText="sasi" id="sasi-amount" />
 
 
                                     </div>
