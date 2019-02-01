@@ -86,7 +86,7 @@ class ProductForm extends Component {
                                     <div className="form-row p-3 ">
 
 
-                                            <div className="form-group col-md-1 text-center">
+                                            <div className="form-group col-sm-1 text-center">
 
     
                                                     <img className="img-fluid rounded-circle p-3" src={emptyImage} alt="" style={{borderColor : "white"}} />
@@ -121,7 +121,7 @@ class ProductForm extends Component {
 
                                         <div className="text-center  bottom-cancel col-6"  onClick={this.hideContent} >
 
-                                                CANCEL
+                                            CANCEL
 
                                         </div>
 
