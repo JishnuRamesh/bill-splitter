@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ImageComponent from './ImageComponent';
+import Error from './Error';
 
 
 import jish from './images/jish.jpg';
@@ -20,14 +21,22 @@ class ProductForm extends Component {
         this.state = {
     
             isValueAdded : false,
-            amount : 0,
+            amount : "",
+            jish : 0,
+            vj: 0,
+            srk : 0,
+            jo : 0,
+            sasi : 0,
+            totalShare : 0,
+            errorMessage : null
             
 
         }
     
         this.showContent = this.showContent.bind(this);
         this.hideContent = this.hideContent.bind(this);
-    
+        this.save = this.save.bind(this);
+        this.saveShare = this.saveShare.bind(this);
     
       }
     
@@ -36,17 +45,28 @@ class ProductForm extends Component {
 
       showContent(e){
 
-        console.log(e.target.value);
+     
 
-        if (e.target.value > 0) {
+       
+
+            const item = e.target.name;
+            const value = e.target.value;
 
             this.setState({ 
                 
-                isValueAdded:true,
-                amount : e.target.value
+                [item] : value
             });
+
+            if (value > 0) {
+
+               this.setState ({isValueAdded : true})
+            }
+            else{
+
+                this.setState ({isValueAdded : false})
+            }
             
-        }
+    
 
        
 
@@ -61,11 +81,92 @@ class ProductForm extends Component {
         this.setState({
             
             isValueAdded:false,
-            amount : 0
+            amount : "",
+            jish : 0,
+            vj : 0,
+            srk : 0,
+            jo : 0,
+            sasi : 0,
+            totalShare :0,
+            errorMessage : null
         
         
         });
         
+
+
+      }
+
+
+
+      saveShare(user, share) {
+
+        console.log("product orf");
+        console.log(user);
+        console.log(share);
+        this.setState({
+            [user] : share,
+            errorMessage :null
+            
+            
+        } ,
+        
+        () => this.setState ({totalShare : this.state.jish+this.state.vj+this.state.jo+this.state.srk+this.state.sasi}
+            
+        )   )
+
+      }
+
+
+
+
+      save(e) {
+          e.preventDefault();
+
+          console.log(this.state.amount);
+          if (this.state.amount === "" ||  this.state.amount <= 0 ) {
+
+            this.setState({
+                errorMessage : "Please enter a valid amount"
+            })
+            
+          } 
+          else if (this.state.totalShare <= 0) {
+
+           
+            this.setState({
+                errorMessage : "Please enter valid shared for induvidual users"
+            })
+            
+           
+
+          }
+          
+          else {
+
+
+             // More to be implemented 
+          this.setState({
+
+
+            jish : 0,
+            vj : 0,
+            srk : 0,
+            jo : 0,
+            sasi : 0,
+            isValueAdded : false,
+            amount : "",
+            errorMessage:null
+
+          })
+
+
+              
+          }
+
+
+         
+         
 
 
       }
@@ -86,24 +187,24 @@ class ProductForm extends Component {
                                     <div className="form-row p-3 ">
 
 
-                                            <div className="form-group col-sm-1 text-center">
+                                            <div className="form-group col-sm-1 text-center d-md-non d-lg-block empty-image">
 
     
                                                     <img className="img-fluid rounded-circle p-3" src={emptyImage} alt="" style={{borderColor : "white"}} />
-                                                    <span> SHARE </span>
+                                                    
     
 
                                             </div>
 
-                                            <ImageComponent image={jish} altText="jish" id="jish-amount" />
+                                            <ImageComponent image={jish} altText="jish" id="jish" shareFunction = {this.saveShare} elementName="jish"  />
 
-                                            <ImageComponent image={vj} altText="vj" id="vj-amount" />
+                                            <ImageComponent image={vj} altText="vj" id="vj" shareFunction = {this.saveShare} elementName="vj"  />
                                             
-                                            <ImageComponent image={srk} altText="srk" id="srk-amount" />
+                                            <ImageComponent image={srk} altText="srk" id="srk" shareFunction = {this.saveShare} elementName="srk" />
 
-                                            <ImageComponent image={jo} altText="jo" id="jo-amount" />
+                                            <ImageComponent image={jo} altText="jo" id="jo"  shareFunction = {this.saveShare}  elementName="jo"/>
 
-                                            <ImageComponent image={sasi} altText="sasi" id="sasi-amount" />
+                                            <ImageComponent image={sasi} altText="sasi" id="sasi"  shareFunction = {this.saveShare}  elementName="sasi"/>
 
 
                                     </div>
@@ -112,7 +213,7 @@ class ProductForm extends Component {
                                     <div className="form-row">
 
 
-                                        <div className=" bottom-save  col-6 " >
+                                        <div className=" bottom-save  col-6 "  onClick ={this.save}>
 
                                             SAVE
 
@@ -140,6 +241,7 @@ class ProductForm extends Component {
             <div className="productForm mx-auto">
             
             
+                <Error errorMessage = {this.state.errorMessage} />
 
                 <h5 className="text-center mt-2 p-2 "> Add Product </h5>
 
@@ -161,8 +263,8 @@ class ProductForm extends Component {
 
                      <div className="form-group col-md-4">
                        <label htmlFor="amount">Amount</label>
-                        <input type="number" className="form-control" id="amounnt" placeholder="$0.0"
-                          required onChange={this.showContent} />
+                        <input type="number" className="form-control" id="amounnt" placeholder="$0.0" name="amount"
+                          required onChange={this.showContent} value={this.state.amount} />
                       </div>
                 </div>
 

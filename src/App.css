@@ -65,3 +65,13 @@
 img {
   border-style: solid;
 }
+
+
+@media screen and (max-wdith : 576px) {
+
+
+  .empty-image {
+    display: none;
+  }
+
+}

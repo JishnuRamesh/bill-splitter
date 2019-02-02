@@ -14,7 +14,7 @@ class Nav extends Component {
 
         <nav className="navbar navbar-light  transparent">
             <a className="navbar-brand mx-auto " href="#" style={{fontSize:3+'em', color:"yellow"}}>
-            <img className="img-fluid rounded-circle" src={logo} alt="" style={{borderStyle : "none", maxHeight:100 + "px" }}  /> </a>
+            <img className="img-fluid rounded-circle" src={logo} alt="" style={{borderStyle : "none", maxHeight:80 + "px" }}  /> </a>
         </nav>
 
 
