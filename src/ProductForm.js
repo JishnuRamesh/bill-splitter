@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ImageComponent from './ImageComponent';
 import Error from './Error';
+import Bill from './Bill';
 
 
 import jish from './images/jish.jpg';
@@ -21,14 +22,20 @@ class ProductForm extends Component {
         this.state = {
     
             isValueAdded : false,
-            amount : "",
+            amount : null,
             jish : 0,
             vj: 0,
             srk : 0,
             jo : 0,
             sasi : 0,
             totalShare : 0,
-            errorMessage : null
+            errorMessage : null,
+            jish_amount : [],
+            vj_amount : [],
+            srk_amount : [],
+            jo_amount : [],
+            sasi_amount : [],
+            total_amount : 0
             
 
         }
@@ -111,10 +118,15 @@ class ProductForm extends Component {
             
         } ,
         
-        () => this.setState ({totalShare : this.state.jish+this.state.vj+this.state.jo+this.state.srk+this.state.sasi}
+        () => this.setState (
+            {totalShare :  parseFloat(this.state.jish)+
+                parseFloat(this.state.vj)+
+                parseFloat(this.state.jo)+
+                parseFloat(this.state.srk)+
+                parseFloat(this.state.sasi)}
             
         )   )
-
+       
       }
 
 
@@ -144,8 +156,146 @@ class ProductForm extends Component {
           
           else {
 
+            var total = parseFloat(this.state.total_amount) + parseFloat(this.state.amount);
+            
 
-             // More to be implemented 
+            if (this.state.jish != 0) {
+            
+                let money = parseFloat(this.state.jish) * ( parseFloat(this.state.amount) / (this.state.totalShare)); 
+                money = Math.round(money * 100) / 100
+                let jishnu_temp_amount = this.state.jish_amount;
+                jishnu_temp_amount.push(money);
+                this.setState({
+
+                    jish_amount : jishnu_temp_amount
+
+                })
+                
+            }
+            else if (this.state.jish == 0) {
+
+                let money = parseFloat(this.state.jish) * ( parseFloat(this.state.amount) / (this.state.totalShare) ); 
+                money = Math.round(money * 100) / 100
+                let jishnu_temp_amount = this.state.jish_amount;
+                jishnu_temp_amount.push(money);
+                this.setState({
+
+                    jish_amount : jishnu_temp_amount
+
+                })
+
+            }
+
+            if (this.state.vj != 0) {
+
+                let money = parseFloat(this.state.vj) * ( parseFloat(this.state.amount) / (this.state.totalShare) ); 
+                money = Math.round(money * 100) / 100
+                let vj_temp_amount =  this.state.vj_amount;
+                vj_temp_amount.push(money);
+                this.setState({
+
+                    vj_amount : vj_temp_amount
+
+                })
+
+            }
+            else if (this.state.vj == 0) {
+
+                let money = parseFloat(this.state.vj) * ( parseFloat(this.state.amount) / (this.state.totalShare) ); 
+                money = Math.round(money * 100) / 100
+                let vj_temp_amount =  this.state.vj_amount;
+                vj_temp_amount.push(money);
+                this.setState({
+
+                    vj_amount : vj_temp_amount
+
+                })
+
+            }
+            if (this.state.srk != 0) {
+
+                let money = parseFloat(this.state.srk) * ( parseFloat(this.state.amount) / (this.state.totalShare) ); 
+                money = Math.round(money * 100) / 100
+                let srk_temp_amount = this.state.srk_amount;
+                srk_temp_amount.push(money);
+                this.setState({
+
+                    srk_amount : srk_temp_amount
+
+                })
+
+            }
+            else if (this.state.srk == 0) {
+
+                let money = parseFloat(this.state.srk) * ( parseFloat(this.state.amount) / (this.state.totalShare) ); 
+                money = Math.round(money * 100) / 100
+                let srk_temp_amount =  this.state.srk_amount;
+                srk_temp_amount.push(money);
+                this.setState({
+
+                    srk_amount : srk_temp_amount
+
+                })
+
+            }
+        
+            if (this.state.jo != 0) {
+
+                let money = parseFloat(this.state.jo) * ( parseFloat(this.state.amount) / (this.state.totalShare) ); 
+                money = Math.round(money * 100) / 100
+                let jo_temp_amount =  this.state.jo_amount;
+                jo_temp_amount.push(money);
+                this.setState({
+
+                    jo_amount : jo_temp_amount
+
+                })
+
+            }
+            else if (this.state.jo == 0) {
+
+                let money = parseFloat(this.state.jo) * ( parseFloat(this.state.amount) / (this.state.totalShare) ); 
+                money = Math.round(money * 100) / 100
+                let jo_temp_amount = this.state.jo_amount;
+                jo_temp_amount.push(money);
+                this.setState({
+
+                    jo_amount : jo_temp_amount
+
+                })
+
+            }
+            if (this.state.sasi != 0) {
+
+                let money = parseFloat(this.state.sasi) * ( parseFloat(this.state.amount) / (this.state.totalShare) ); 
+                money = Math.round(money * 100) / 100
+                let sasi_temp_amount =  this.state.sasi_amount;
+                sasi_temp_amount.push(money);
+                this.setState({
+
+                    sasi_amount : sasi_temp_amount
+
+                })
+
+            }
+            else if (this.state.sasi == 0) {
+
+                let money = parseFloat(this.state.sasi) * ( parseFloat(this.state.amount) / (this.state.totalShare) );
+                money = Math.round(money * 100) / 100
+                let sasi_temp_amount =  this.state.sasi_amount;
+                sasi_temp_amount.push(money);
+                this.setState({
+
+                    sasi_amount : sasi_temp_amount
+
+                })
+
+            }
+        
+
+
+
+
           this.setState({
 
 
@@ -156,7 +306,10 @@ class ProductForm extends Component {
             sasi : 0,
             isValueAdded : false,
             amount : "",
-            errorMessage:null
+            errorMessage:null,
+            totalShare : 0,
+            total_amount : total
+        
 
           })
 
@@ -181,20 +334,16 @@ class ProductForm extends Component {
 
            pictures =          <div>
 
-                                    <h5 className="text-center p-2"> Select whom you want to split the bills with </h5>
+                                    <div className=" p-2 mx-auto" style={{width : "85%", paddingBottom: 0 +"px"}}>
+
+                                    <h5> Select whom you want to split the bills with </h5>
+
+                                    </div>
+
+                                    <div className="form-row p-3 text-center mx-auto" style={{width : "95%"}} >
 
 
-                                    <div className="form-row p-3 ">
-
-
-                                            <div className="form-group col-sm-1 text-center d-md-non d-lg-block empty-image">
-
-    
-                                                    <img className="img-fluid rounded-circle p-3" src={emptyImage} alt="" style={{borderColor : "white"}} />
-                                                    
-    
-
-                                            </div>
+                                            
 
                                             <ImageComponent image={jish} altText="jish" id="jish" shareFunction = {this.saveShare} elementName="jish"  />
 
@@ -229,7 +378,11 @@ class ProductForm extends Component {
 
                                     </div>
 
+
+                                    
+
                                 </div>
+                                
 
 
         }
@@ -280,7 +433,23 @@ class ProductForm extends Component {
              
              </div>
              </form>
-             
+
+            {this.state.total_amount > 0 ? (
+                
+                <div className="mt-2"> 
+
+                 
+                <Bill jish_amount={this.state.jish_amount} 
+                vj_amount={this.state.vj_amount}
+                srk_amount={this.state.srk_amount}
+                jo_amount={this.state.jo_amount}
+                sasi_amount={this.state.sasi_amount}/>
+                
+            </div>
+            
+            ): null }
+
+            
              
                 </div>
             

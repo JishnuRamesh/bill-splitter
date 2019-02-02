@@ -45,7 +45,7 @@ code {
   height: 50px;
   line-height: 50px;
   background-color: #333333;
-  color : #6b6b6b;
+  color : #ffffff;
   text-align: center;
   cursor : pointer
   
@@ -119,6 +119,17 @@ cursor : pointer
     transition : opacity 1000ms ease-out;
     cursor : pointer
     
+
+
+  }
+
+
+
+  .bill-image{
+
+    opacity: 1;
+    border-color: green;
+
 
 
   }
