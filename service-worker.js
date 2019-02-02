@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/JishnuRamesh/bill-splitter/precache-manifest.5c9dce37c1c3ccaeb16e785fa14f74ad.js"
+  "/bill-splitter/precache-manifest.718abb05d8ae6d57ddf55f049c090d29.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/JishnuRamesh/bill-splitter/index.html", {
+workbox.routing.registerNavigationRoute("/bill-splitter/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
