@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/bill-splitter/precache-manifest.fd5f4d82c7ac7679cf2fbe98e7ac87a9.js"
+  "/bill-splitter/precache-manifest.249eef679453125da9dd93a533947080.js"
 );
 
 workbox.clientsClaim();

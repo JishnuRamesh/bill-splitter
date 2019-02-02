@@ -12,23 +12,23 @@ self.__precacheManifest = [
     "url": "/bill-splitter/static/js/runtime~main.d84661d6.js"
   },
   {
-    "revision": "ea9a8b52d4eadeb7920e",
-    "url": "/bill-splitter/static/js/main.ea9a8b52.chunk.js"
+    "revision": "af51da2d7b674657bb2c",
+    "url": "/bill-splitter/static/js/main.af51da2d.chunk.js"
   },
   {
     "revision": "62d7e86bc4e96464cd43",
     "url": "/bill-splitter/static/js/1.62d7e86b.chunk.js"
   },
   {
-    "revision": "ea9a8b52d4eadeb7920e",
-    "url": "/bill-splitter/static/css/main.729fcd67.chunk.css"
+    "revision": "af51da2d7b674657bb2c",
+    "url": "/bill-splitter/static/css/main.6f2b96bd.chunk.css"
   },
   {
     "revision": "62d7e86bc4e96464cd43",
     "url": "/bill-splitter/static/css/1.40eacbf2.chunk.css"
   },
   {
-    "revision": "b280e2c9eca7d26c8fb12a7f0d85cb67",
+    "revision": "40870e85f90f476b878198f49c7264d8",
     "url": "/bill-splitter/index.html"
   }
 ];
