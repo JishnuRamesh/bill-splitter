@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/bill-splitter/static/css/1.40eacbf2.chunk.css"
   },
   {
-    "revision": "40870e85f90f476b878198f49c7264d8",
+    "revision": "53bf7242a76ba63dc3b78bb1e1c89eb4",
     "url": "/bill-splitter/index.html"
   }
 ];
