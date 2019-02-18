@@ -2,7 +2,7 @@
   "name": "bill-splitter",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jishnuramesh.github.io/bill-splitter/",
+  "homepage": "https://jishnuramesh.github.io/",
   "dependencies": {
     "bootstrap": "^4.2.1",
     "react": "^16.7.0",
