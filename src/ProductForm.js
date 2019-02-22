@@ -22,7 +22,7 @@ class ProductForm extends Component {
         this.state = {
     
             isValueAdded : false,
-            amount : null,
+            amount : '',
             jish : 0,
             vj: 0,
             srk : 0,
@@ -35,7 +35,9 @@ class ProductForm extends Component {
             srk_amount : [],
             jo_amount : [],
             sasi_amount : [],
-            total_amount : 0
+            total_amount : 0,
+            product_name :'',
+            product_list : []
             
 
         }
@@ -44,17 +46,29 @@ class ProductForm extends Component {
         this.hideContent = this.hideContent.bind(this);
         this.save = this.save.bind(this);
         this.saveShare = this.saveShare.bind(this);
+        this.saveProductName = this.saveProductName.bind(this);
     
       }
     
 
 
 
+      saveProductName(e) {
+
+        const item = e.target.name;
+        const value = e.target.value;
+
+        this.setState({
+            [item] : value
+        });
+
+
+      }
+
+
+
+
       showContent(e){
-
-     
-
-       
 
             const item = e.target.name;
             const value = e.target.value;
@@ -95,7 +109,8 @@ class ProductForm extends Component {
             jo : 0,
             sasi : 0,
             totalShare :0,
-            errorMessage : null
+            errorMessage : null,
+            product_name :''
         
         
         });
@@ -108,9 +123,7 @@ class ProductForm extends Component {
 
       saveShare(user, share) {
 
-        console.log("product orf");
-        console.log(user);
-        console.log(share);
+      
         this.setState({
             [user] : share,
             errorMessage :null
@@ -147,7 +160,7 @@ class ProductForm extends Component {
 
            
             this.setState({
-                errorMessage : "Please enter valid shared for induvidual users"
+                errorMessage : "Please enter valid share for induvidual users"
             })
             
            
@@ -155,6 +168,8 @@ class ProductForm extends Component {
           }
           
           else {
+
+
 
             var total = parseFloat(this.state.total_amount) + parseFloat(this.state.amount);
             
@@ -308,7 +323,8 @@ class ProductForm extends Component {
             amount : "",
             errorMessage:null,
             totalShare : 0,
-            total_amount : total
+            total_amount : total,
+            product_name :''
         
 
           })
@@ -329,6 +345,8 @@ class ProductForm extends Component {
     render() {
 
         let pictures;
+
+        const test = this.state.jish_amount.map((number) => <p key={this.state.jish_amount.indexOf(number)}> {number}</p>);
 
         if (this.state.isValueAdded === true) {
 
@@ -411,7 +429,8 @@ class ProductForm extends Component {
 
                      <div className="form-group col-md-8">
                           <label htmlFor="product">Product (Optional)</label>
-                       <input type="text" className="form-control" id="product" placeholder="ProductName"  required />
+                       <input type="text" onChange={this.saveProductName} value={this.state.product_name} className="form-control" id="product"
+                       name="product_name" placeholder="ProductName"  required />
                      </div>
 
                      <div className="form-group col-md-4">
@@ -443,12 +462,23 @@ class ProductForm extends Component {
                 vj_amount={this.state.vj_amount}
                 srk_amount={this.state.srk_amount}
                 jo_amount={this.state.jo_amount}
-                sasi_amount={this.state.sasi_amount}/>
+                sasi_amount={this.state.sasi_amount} total_amount={this.state.total_amount}/>
                 
             </div>
             
             ): null }
 
+
+            
+            
+            {this.state.total_amount > 0 ? (
+
+                <div className="mt-2"> 
+               {test}
+                </div>
+
+
+            ) : null}
             
              
                 </div>
