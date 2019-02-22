@@ -10,6 +10,7 @@ import srk from './images/srk.jpg';
 import jo from './images/jo.jpg';
 import sasi from './images/sasi.jpg';
 import emptyImage from './images/empty.jpg';
+import ProductList from './ProductList';
 
 
 
@@ -169,6 +170,19 @@ class ProductForm extends Component {
           
           else {
 
+
+            // set product list
+            let tempProductList = this.state.product_list;
+            if (this.state.product_name === "" || this.state.product_name.length <= 0) {
+
+              tempProductList.push("product "+ (this.state.product_list.length + 1));
+
+            }
+            else{
+                tempProductList.push(this.state.product_name);
+            }
+          
+            this.setState({product_list : tempProductList});
 
 
             var total = parseFloat(this.state.total_amount) + parseFloat(this.state.amount);
@@ -474,7 +488,13 @@ class ProductForm extends Component {
             {this.state.total_amount > 0 ? (
 
                 <div className="mt-2"> 
-               {test}
+                <ProductList productNames={this.state.product_list} 
+                jishAmount={this.state.jish_amount} 
+                vjAmount = {this.state.vj_amount}
+                srkAmount = {this.state.srk_amount}
+                joAmount = {this.state.jo_amount}
+                sasiAmount = {this.state.sasi_amount}
+                />
                 </div>
 
 
