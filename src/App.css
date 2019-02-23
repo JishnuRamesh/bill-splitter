@@ -83,6 +83,12 @@ img {
 }
 
 
+.extended-bill {
+  background-color: rgb(233, 236, 239)
+}
+
+
+
 @media screen and (max-wdith : 576px) {
 
 
@@ -91,3 +97,6 @@ img {
   }
 
 }
+
+
+

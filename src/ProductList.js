@@ -7,7 +7,7 @@ class ProductList extends React.Component {
 
     constructor(props){
 
-        super(props);
+       super(props);
 
     }
 
@@ -52,7 +52,7 @@ class ProductList extends React.Component {
             <div className="col-12 text-center">
             
 
-            <h4 className="text-center"> EXTENDED BILL </h4>
+            
 
             
             </div>
@@ -67,8 +67,8 @@ class ProductList extends React.Component {
 
             <div className="col-md-2 text-center p-2 mt-lg-5">
 
-            <h6> Product Name </h6>
-            <div className="mt-2">
+            <h6> PRODUCT NAME </h6>
+            <div className="mt-2" style={{textTransform : "uppercase"}}>
             {productNames}
             </div>
             
@@ -78,7 +78,7 @@ class ProductList extends React.Component {
 
             <div className="col-md-2 text-center p-2 mt-lg-5">
 
-            <h6> Jishnu </h6>
+            <h6> JISHNU </h6>
             <div className="mt-2">
             {jishAmount}
             </div>
@@ -88,7 +88,7 @@ class ProductList extends React.Component {
 
             <div className="col-md-2 text-center p-2 mt-lg-5">
 
-            <h6> Vijay </h6>
+            <h6> VIJAY </h6>
             <div className="mt-2">
             {vjAmount}
             </div>
@@ -99,7 +99,7 @@ class ProductList extends React.Component {
 
             <div className="col-md-2 text-center p-2 mt-lg-5">
 
-            <h6> Sharuq </h6>
+            <h6> SHARUQ </h6>
             <div className="mt-2">
             {srkAmount}
             </div>
@@ -109,7 +109,7 @@ class ProductList extends React.Component {
 
             <div className="col-md-2 text-center p-2 mt-lg-5">
 
-            <h6> Johnnie </h6>
+            <h6> JOHNNIE </h6>
             <div className="mt-2">
             {joAmount}
             </div>
@@ -119,7 +119,7 @@ class ProductList extends React.Component {
 
              <div className="col-md-2 text-center p-2 mt-lg-5">
 
-            <h6> Sasi </h6>
+            <h6> SHASI </h6>
             <div className="mt-2">
             {sasiAmount}
             </div>

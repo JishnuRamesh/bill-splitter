@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import ImageComponent from './ImageComponent';
+import Switch from 'react-switch';
+
+
 import Error from './Error';
 import Bill from './Bill';
 
@@ -38,7 +41,8 @@ class ProductForm extends Component {
             sasi_amount : [],
             total_amount : 0,
             product_name :'',
-            product_list : []
+            product_list : [],
+            checked : false
             
 
         }
@@ -48,10 +52,19 @@ class ProductForm extends Component {
         this.save = this.save.bind(this);
         this.saveShare = this.saveShare.bind(this);
         this.saveProductName = this.saveProductName.bind(this);
+        this.handleSwitch = this.handleSwitch.bind(this);
     
       }
     
 
+
+
+      handleSwitch(checked) {
+
+        this.setState({checked});
+
+
+      }
 
 
       saveProductName(e) {
@@ -428,7 +441,7 @@ class ProductForm extends Component {
             
                 <Error errorMessage = {this.state.errorMessage} />
 
-                <h5 className="text-center mt-2 p-2 "> Add Product </h5>
+                <h5 className="text-center mt-1 p-2 "> BILL SPLITTER </h5>
 
 
                 
@@ -448,7 +461,7 @@ class ProductForm extends Component {
                      </div>
 
                      <div className="form-group col-md-4">
-                       <label htmlFor="amount">Amount</label>
+                       <label htmlFor="amount">Amount <span className="text-danger">{this.state.amount.length === 0 ? "(Add amount to continue)" : ""}</span> </label>
                         <input type="number" className="form-control" id="amounnt" placeholder="$0.0" name="amount"
                           required onChange={this.showContent} value={this.state.amount} />
                       </div>
@@ -471,7 +484,7 @@ class ProductForm extends Component {
                 
                 <div className="mt-2"> 
 
-                 
+                <hr></hr>
                 <Bill jish_amount={this.state.jish_amount} 
                 vj_amount={this.state.vj_amount}
                 srk_amount={this.state.srk_amount}
@@ -483,11 +496,24 @@ class ProductForm extends Component {
             ): null }
 
 
-            
-            
-            {this.state.total_amount > 0 ? (
+           
 
-                <div className="mt-2"> 
+                {this.state.total_amount > 0 ? (
+                
+                <div className="mr-2" style={{textAlign:"right"}}>
+                <hr></hr>
+                <p>{this.state.checked ? 'HIDE' : 'SHOW' } EXTENDED BILL &nbsp;
+                <Switch onChange={this.handleSwitch} checked={this.state.checked} /> </p>
+               
+                </div>
+
+
+            ): null}
+            
+            
+            {this.state.checked  ? (
+
+                <div className="mt-2 extended-bill"> 
                 <ProductList productNames={this.state.product_list} 
                 jishAmount={this.state.jish_amount} 
                 vjAmount = {this.state.vj_amount}

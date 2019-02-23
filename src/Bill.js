@@ -28,7 +28,7 @@ class Bill extends Component {
 
             <h4 className="text-center"> BILL SNAPSHOT </h4>
 
-            <hr></hr> 
+          
             </div>
             
            
